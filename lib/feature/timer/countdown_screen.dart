@@ -1,7 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'providers/countdown_provider.dart';
 
@@ -25,6 +24,12 @@ class CountdownScreen extends ConsumerWidget {
             Text(remainingTime.toString()),
             Text(remainingTime.toString()),
             Text(remainingTime.toString()),
+            ElevatedButton(
+              onPressed: () {
+                GoRouter.of(context).go('/timer');
+              },
+              child: const Text('Start Timer'),
+            ),
           ],
         ),
       ),
